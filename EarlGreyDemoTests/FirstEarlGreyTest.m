@@ -15,9 +15,16 @@
 
 @implementation FirstEarlGreyTest
 
-- (void)testPresenceOfKeyWindow {
-    [[EarlGrey selectElementWithMatcher:grey_keyWindow()]
-     assertWithMatcher:grey_sufficientlyVisible()];
+- (void)testSwitchState {
+//    [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"switch")]
+//     assertWithMatcher:grey_sufficientlyVisible()];
+    //找到控件，执行关操作
+    [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"switch")]
+     performAction:grey_turnSwitchOn(YES) ];
+    //对控件的状态进行断言
+    [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"switch")]
+     assertWithMatcher:grey_switchWithOnState(YES) ];
+
 }
 
 @end

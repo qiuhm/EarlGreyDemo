@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    UISwitch * isOpen=[[UISwitch alloc]initWithFrame:CGRectMake(100, 100, 50, 50)];
+    isOpen.on = NO;
+    isOpen.accessibilityIdentifier = @"switch";
+    self.view.backgroundColor = [UIColor purpleColor];
+    [self.view addSubview:isOpen];
+
 }
 
 - (void)didReceiveMemoryWarning {
